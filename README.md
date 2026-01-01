@@ -1,7 +1,7 @@
 # Arabic Visual Question Generation (VQG)
-##Generating Context-Aware Questions from Images Using Deep Learning
+## Generating Context-Aware Questions from Images Using Deep Learning
 
-## #Abstract
+### Abstract
 This project introduces a deep learning framework for Arabic Visual Question Generation (VQG). The system employs a Bottom-Up and Top-Down Attention mechanism to generate linguistically accurate and contextually relevant Arabic questions from images. By integrating Faster R-CNN for visual feature extraction and an LSTM-based architecture for language modeling, the project addresses the gap in Arabic vision-language research.
 
 The implementation is built upon and adapted from the work of [Pooja Hira](https://github.com/poojahira/image-captioning-bottom-up-top-down), with modifications to the environment, language processing pipeline, and the core task to support Arabic VQG.
