@@ -32,9 +32,11 @@ This architecture is adapted from the original work by Peter Anderson et al., wh
 
 The primary contributions of this research involve the adaptation of visual-linguistic models for the Arabic language, specifically:
 
-1.  **Large-Scale Arabic Dataset Translation:** We translated approximately **93,000 image captions** from the MS-COCO 2014 dataset into Arabic.
-2.  **Arabic VQG Dataset Creation:** Beyond simple translation, we transformed these Arabic captions into context-aware visual questions, resulting in a comprehensive dataset containing both Arabic captions and corresponding Arabic questions for the MS-COCO images.
-3.  **Model Adaptation & Optimization:** We modified the Bottom-Up and Top-Down Attention framework to process Arabic script and generate grammatically correct questions. Furthermore, we updated the codebase to ensure compatibility with **Python 3.12.6**, addressing legacy dependency issues and optimizing it for modern execution environments.
+## Key Contributions
+
+1. **Large-Scale Arabic Translation:** Translated approximately 93,000 MS-COCO image captions into Arabic.
+2. **Arabic VQG Dataset:** Engineered a comprehensive dataset by transforming Arabic captions into context-aware visual questions.
+3. **Model Adaptation & Optimization:** Adapted the Bottom-Up and Top-Down Attention framework for Arabic linguistics and updated the environment to **Python 3.12.6** for modern compatibility.
 ![Result](Image/result1.png) 
 
 
