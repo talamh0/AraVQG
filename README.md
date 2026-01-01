@@ -2,22 +2,43 @@
 # Generating Context-Aware Questions from Images Using Deep Learning
 
 ## Abstract
+This project introduces a deep learning framework for Arabic Visual Question Generation (VQG). The system employs a Bottom-Up and Top-Down Attention mechanism to generate linguistically accurate and contextually relevant Arabic questions from images. By integrating Faster R-CNN for visual feature extraction and an LSTM-based architecture for language modeling, the project addresses the gap in Arabic vision-language research.
 
-This project presents a deep learning-based framework for Visual Question Generation (VQG) focused on the Arabic language. The primary objective is to generate natural, meaningful, and context-aware Arabic questions from input images. To achieve this, the system utilizes a **Bottom-Up and Top-Down Attention** mechanism.
+The implementation is built upon and adapted from the work of [Pooja Hira](https://github.com/poojahira/image-captioning-bottom-up-top-down), with modifications to the environment, language processing pipeline, and the core task to support Arabic VQG.
 
-The model architecture integrates **Faster R-CNN** with a ResNet-101 backbone to extract salient visual features (Bottom-Up Attention) and employs a two-layer **LSTM** with attention mechanisms to generate linguistic sequences (Top-Down Attention). [cite_start]The model was trained on the **MS-COCO 2014** dataset, which was translated and adapted to create an Arabic VQG dataset specifically for this research[cite: 33, 34, 35, 39].
+## Baseline Model
 
-## Code Adaptation and Modifications
+To evaluate the effectiveness of the proposed architecture, a baseline model was implemented for comparison. The baseline follows a two-stage pipeline:
+1. **Arabic Image Captioning:** Generating a descriptive caption from the input image.
+2. **Text-to-Question Transformation:** Converting the generated caption into a question using a rule-based or language model approach.
 
-The core implementation of this project is based on the "Image Captioning using Bottom-Up Top-Down Attention" repository by Pooja Hira, available at:
-[https://github.com/poojahira/image-captioning-bottom-up-top-down](https://github.com/poojahira/image-captioning-bottom-up-top-down)
+Unlike our proposed context-aware model, the baseline relies on the intermediate caption, which may lead to information loss regarding specific visual details.
 
-[cite_start]Significant modifications were made to the original codebase to align with the specific requirements of this research[cite: 712, 713, 714]:
+![Baseline Architecture](Image/baseline.png)
 
-1.  **Task Adaptation:** The architecture was redesigned to perform **Visual Question Generation (VQG)** instead of Image Captioning.
-2.  **Language Support:** The decoder and data processing pipelines were modified to support the **Arabic language**, including specific preprocessing steps for Arabic text (normalization and cleaning).
-3.  **Environment Updates:** The Python version and library dependencies (including PyTorch) were updated to ensure compatibility with modern training environments (e.g., Google Colab and Vast.ai).
-4.  **Dataset Structure:** Custom modules were developed to handle the translated MS-COCO dataset, including data loading, evaluation metrics adaptation (BLEU, METEOR, ROUGE, CIDEr, BERTScore), and HDF5 feature integration.
+## Proposed Approach
+
+The core of our system is based on the **Bottom-Up and Top-Down Attention** architecture. This specific architecture was utilized for both the Image Captioning baseline and our final Visual Question Generation (VQG) model, ensuring a consistent and powerful visual-linguistic feature extraction process.
+
+The model uses a **Faster R-CNN** to identify image regions (Bottom-Up) and a **dual-layer LSTM** to selectively attend to those regions (Top-Down) during text generation.
+
+![Model Architecture](Image/architecture.png)
+
+This architecture is adapted from the original work by Peter Anderson et al., which serves as the primary reference for our implementation:
+
+> Anderson, P., He, X., Buehler, C., Teney, D., Johnson, M., Gould, S., & Zhang, L. (2018). **Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering.** In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*.
+
+## Key Contributions
+
+The primary contributions of this research involve the adaptation of visual-linguistic models for the Arabic language, specifically:
+
+1.  **Large-Scale Arabic Dataset Translation:** We translated approximately **93,000 image captions** from the MS-COCO 2014 dataset into Arabic.
+2.  **Arabic VQG Dataset Creation:** Beyond simple translation, we transformed these Arabic captions into context-aware visual questions, resulting in a comprehensive dataset containing both Arabic captions and corresponding Arabic questions for the MS-COCO images.
+3.  **Model Adaptation:** We successfully modified the Bottom-Up and Top-Down Attention framework to process Arabic script and generate grammatically correct Arabic questions based on localized visual features.
+The following examples illustrate the output of the proposed model, showcasing the generated Arabic questions alongside their respective images:
+
+![Result](Image/result1.png) 
+
 
 
 ## Team Members
