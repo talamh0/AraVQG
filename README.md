@@ -1,5 +1,23 @@
 # Arabic Visual Question Generation (VQG)
+# Generating Context-Aware Questions from Images Using Deep Learning
 
+## Abstract
+
+This project presents a deep learning-based framework for Visual Question Generation (VQG) focused on the Arabic language. The primary objective is to generate natural, meaningful, and context-aware Arabic questions from input images. To achieve this, the system utilizes a **Bottom-Up and Top-Down Attention** mechanism.
+
+The model architecture integrates **Faster R-CNN** with a ResNet-101 backbone to extract salient visual features (Bottom-Up Attention) and employs a two-layer **LSTM** with attention mechanisms to generate linguistic sequences (Top-Down Attention). [cite_start]The model was trained on the **MS-COCO 2014** dataset, which was translated and adapted to create an Arabic VQG dataset specifically for this research[cite: 33, 34, 35, 39].
+
+## Code Adaptation and Modifications
+
+The core implementation of this project is based on the "Image Captioning using Bottom-Up Top-Down Attention" repository by Pooja Hira, available at:
+[https://github.com/poojahira/image-captioning-bottom-up-top-down](https://github.com/poojahira/image-captioning-bottom-up-top-down)
+
+[cite_start]Significant modifications were made to the original codebase to align with the specific requirements of this research[cite: 712, 713, 714]:
+
+1.  **Task Adaptation:** The architecture was redesigned to perform **Visual Question Generation (VQG)** instead of Image Captioning.
+2.  **Language Support:** The decoder and data processing pipelines were modified to support the **Arabic language**, including specific preprocessing steps for Arabic text (normalization and cleaning).
+3.  **Environment Updates:** The Python version and library dependencies (including PyTorch) were updated to ensure compatibility with modern training environments (e.g., Google Colab and Vast.ai).
+4.  **Dataset Structure:** Custom modules were developed to handle the translated MS-COCO dataset, including data loading, evaluation metrics adaptation (BLEU, METEOR, ROUGE, CIDEr, BERTScore), and HDF5 feature integration.
 
 
 ## Team Members
