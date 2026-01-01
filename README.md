@@ -1,12 +1,12 @@
 # Arabic Visual Question Generation (VQG)
-# Generating Context-Aware Questions from Images Using Deep Learning
+##Generating Context-Aware Questions from Images Using Deep Learning
 
-## Abstract
+## #Abstract
 This project introduces a deep learning framework for Arabic Visual Question Generation (VQG). The system employs a Bottom-Up and Top-Down Attention mechanism to generate linguistically accurate and contextually relevant Arabic questions from images. By integrating Faster R-CNN for visual feature extraction and an LSTM-based architecture for language modeling, the project addresses the gap in Arabic vision-language research.
 
 The implementation is built upon and adapted from the work of [Pooja Hira](https://github.com/poojahira/image-captioning-bottom-up-top-down), with modifications to the environment, language processing pipeline, and the core task to support Arabic VQG.
 
-## Baseline Model
+### Baseline Model
 
 To evaluate the effectiveness of the proposed architecture, a baseline model was implemented for comparison. The baseline follows a two-stage pipeline:
 1. **Arabic Image Captioning:** Generating a descriptive caption from the input image.
@@ -16,7 +16,7 @@ Unlike our proposed context-aware model, the baseline relies on the intermediate
 
 ![Baseline Architecture](Image/baseline.png)
 
-## Proposed Approach
+### Proposed Approach
 
 The core of our system is based on the **Bottom-Up and Top-Down Attention** architecture. This specific architecture was utilized for both the Image Captioning baseline and our final Visual Question Generation (VQG) model, ensuring a consistent and powerful visual-linguistic feature extraction process.
 
@@ -28,15 +28,13 @@ This architecture is adapted from the original work by Peter Anderson et al., wh
 
 > Anderson, P., He, X., Buehler, C., Teney, D., Johnson, M., Gould, S., & Zhang, L. (2018). **Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering.** In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*.
 
-## Key Contributions
+### Key Contributions
 
 The primary contributions of this research involve the adaptation of visual-linguistic models for the Arabic language, specifically:
 
 1.  **Large-Scale Arabic Dataset Translation:** We translated approximately **93,000 image captions** from the MS-COCO 2014 dataset into Arabic.
 2.  **Arabic VQG Dataset Creation:** Beyond simple translation, we transformed these Arabic captions into context-aware visual questions, resulting in a comprehensive dataset containing both Arabic captions and corresponding Arabic questions for the MS-COCO images.
-3.  **Model Adaptation:** We successfully modified the Bottom-Up and Top-Down Attention framework to process Arabic script and generate grammatically correct Arabic questions based on localized visual features.
-The following examples illustrate the output of the proposed model, showcasing the generated Arabic questions alongside their respective images:
-
+3.  **Model Adaptation & Optimization:** We modified the Bottom-Up and Top-Down Attention framework to process Arabic script and generate grammatically correct questions. Furthermore, we updated the codebase to ensure compatibility with **Python 3.12.6**, addressing legacy dependency issues and optimizing it for modern execution environments.
 ![Result](Image/result1.png) 
 
 
